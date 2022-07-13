@@ -6,9 +6,8 @@ Supports V8 version 9.9 on PHP 8.0.
 
 Docker Hub: https://hub.docker.com/r/aozisik/docker-v8js-php
 
-PHP-FPM images:
+PHP-FPM image:
 
 ```bash
-# 7.4
 docker pull aozisik/docker-v8js-php:php8.0-fpm-v8js9.9
 ```
