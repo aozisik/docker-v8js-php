@@ -60,7 +60,6 @@ LABEL  org.label-schema.build-date=$BUILD_DATE \
 
 COPY --from=BASE_PHP /opt /opt
 COPY --from=BASE_PHP /usr/local/etc/php/conf.d/docker-php-ext-v8js.ini /usr/local/etc/php/conf.d/
-COPY --from=BASE_PHP /usr/local/lib/php/extensions/no-debug-non-zts-20190902 /usr/local/lib/php/extensions/no-debug-non-zts-20190902
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
