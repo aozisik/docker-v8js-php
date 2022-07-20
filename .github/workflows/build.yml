@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: aozisik/docker-v8js-php:latest
+          tags: aozisik/docker-v8js-php:php8.0-fpm-v8js9.9
