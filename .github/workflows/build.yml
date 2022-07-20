@@ -23,3 +23,5 @@ jobs:
         with:
           push: true
           tags: aozisik/docker-v8js-php:php8.0-fpm-v8js9.9
+          cache-from: type=registry,ref=aozisik/docker-v8js-php:php8.0-fpm-v8js9.9
+          cache-to: type=registry,ref=aozisik/docker-v8js-php:buildcache,mode=max          
