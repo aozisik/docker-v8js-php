@@ -45,10 +45,11 @@ RUN cd /tmp \
     && make test \
     && make install
 
-RUN ls -la /usr/local/etc/php/conf.d/ \
-    && ls -la /usr/local/lib/php/extensions/
-
 RUN docker-php-ext-enable v8js
+
+RUN ls -la /usr/local/etc/php/conf.d/ \
+    && ls -la /usr/local/lib/php/extensions/no-debug-non-zts-20200930
+
 FROM php:8.0-fpm
 
 ARG VCS_REF
@@ -65,5 +66,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev
+
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install pdo_mysql exif pcntl bcmath gd
